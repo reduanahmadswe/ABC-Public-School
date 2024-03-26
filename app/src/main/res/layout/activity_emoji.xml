@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFC00"
+    tools:context=".Emoji_Activity"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="20"
+        >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="10"
+            android:gravity="center"
+            android:background="@drawable/coler_white"
+            android:layout_margin="15dp"
+            >
+            <ViewFlipper
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:flipInterval="3000"
+                android:autoStart="true"
+                android:inAnimation="@android:anim/slide_in_left"
+                android:outAnimation="@android:anim/slide_out_right"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:layout_centerVertical="true"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/yay_animation" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:layout_centerVertical="true"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/wow_animation" />
+
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:layout_centerVertical="true"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/smiley_animation" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:layout_centerVertical="true"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/smailing_face_with_heart_animation" />
+
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:layout_centerVertical="true"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/sad_animation" />
+
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:layout_centerVertical="true"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/pink_tongue_animation" />
+
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:layout_centerVertical="true"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/love_animation" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:layout_centerVertical="true"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/like_animation" />
+
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:layout_centerVertical="true"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/haha_animation" />
+
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:layout_centerVertical="true"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/care_animation" />
+
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="fill_parent"
+                    android:layout_height="250dp"
+                    android:layout_centerVertical="true"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/angry_animation" />
+
+
+
+
+
+            </ViewFlipper>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="10"
+            android:gravity="center"
+            android:background="@drawable/shape_background"
+            android:layout_margin="15dp"
+            >
+
+            <ViewFlipper
+                android:layout_width="fill_parent"
+                android:layout_height="250dp"
+                android:flipInterval="3000"
+                android:autoStart="true"
+                android:inAnimation="@android:anim/slide_in_left"
+                android:outAnimation="@android:anim/slide_out_right"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Yay"
+                    android:textSize="55dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Wow"
+                    android:textSize="55dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Smilet"
+                    android:textSize="55dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Smailing Face"
+                    android:textSize="55dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sad"
+                    android:textSize="55dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pink Tongue"
+                    android:textSize="55dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Love"
+                    android:textSize="55dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Like"
+                    android:textSize="55dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Haha"
+                    android:textSize="55dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Care"
+                    android:textSize="55dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Angry"
+                    android:textSize="55dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:gravity="center"/>
+
+
+
+
+
+            </ViewFlipper>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

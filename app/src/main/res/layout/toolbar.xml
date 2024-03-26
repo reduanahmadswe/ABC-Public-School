@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFC00">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        >
+
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/settings"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            app:lottie_rawRes="@raw/settings"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:layout_centerVertical="true"
+            />
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/no_ads_pepapp"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            app:lottie_rawRes="@raw/no_ads_pepapp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:layout_marginLeft="50dp"
+            />
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/rate_us_five_stars"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            app:lottie_rawRes="@raw/rate_us_five_stars"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:layout_marginLeft="100dp"
+            />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/share"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            app:lottie_rawRes="@raw/share"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:layout_marginLeft="150dp"
+            />
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/exit_to_app"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            app:lottie_rawRes="@raw/exit"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            />
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
