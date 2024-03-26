@@ -1,6 +1,5 @@
 package com.reduanssoftware.abcpublicschool;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -9,44 +8,37 @@ import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.airbnb.lottie.Cancellable;
 import com.airbnb.lottie.LottieAnimationView;
-import com.airbnb.lottie.LottieComposition;
 
+import java.util.Locale;
 
-import androidx.viewpager2.widget.ViewPager2;
-
-public class Shape_Activity extends AppCompatActivity {
+public class Shape_Activity extends AppCompatActivity implements TextToSpeech.OnInitListener {
 
     private View decorView;
     private LottieAnimationView animationview_shape, left_arrow_shape, home_animation_shape, right_arrow_shape;
     private TextView textview_shape;
     private int i = 0;
-    private static final int MAX_INDEX = 10;
+    private static final int MAX_INDEX = 11;
     private static final int MIN_INDEX = 0;
-    private static final int[] textureArrayWin = {R.raw.circle_animation,R.raw.triangle_animation,
-            R.raw.square_animation, R.raw.star_animation, R.raw.plus_animation, R.raw.minus_animation,
-            R.raw.multiple_animation, R.raw.divide_animation, R.raw.heart_animation, R.raw.left_arrow, R.raw.right_arrow};
-    private final String[] textArray = {"Circle","Tringle", "Square", "Star", "Plus", "Minus",
+    private final String[] textArray = {"Circle","Triangle", "Square", "Star", "Plus", "Minus",
             "Multiple", "Divide", "Heart", "Left", "Right"};
 
-    MediaPlayer mediaPlayer;
-    int[] tracks = {R.raw.a, R.raw.b, R.raw.c,R.raw.d, R.raw.e, R.raw.f,
-            R.raw.g, R.raw.h, R.raw.i,R.raw.j}; // Add your track resources here
-
+    private MediaPlayer mediaPlayer;
+    private TextToSpeech textToSpeech;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_shape);
 
         transparentStatusbarAndNavigation();
@@ -58,8 +50,7 @@ public class Shape_Activity extends AppCompatActivity {
         right_arrow_shape = findViewById(R.id.right_arrow_shape);
         textview_shape = findViewById(R.id.textview_shape);
 
-
-        mediaPlayer = MediaPlayer.create(this, tracks[i]);
+        mediaPlayer = new MediaPlayer();
 
         left_arrow_shape.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +58,6 @@ public class Shape_Activity extends AppCompatActivity {
                 if (i > MIN_INDEX) {
                     i--;
                     updateAnimationAndText();
-
                 }
             }
         });
@@ -78,8 +68,6 @@ public class Shape_Activity extends AppCompatActivity {
                 if (i < MAX_INDEX -1) {
                     i++;
                     updateAnimationAndText();
-
-
                 }
             }
         });
@@ -92,6 +80,9 @@ public class Shape_Activity extends AppCompatActivity {
             }
         });
 
+        // Initialize TextToSpeech
+        textToSpeech = new TextToSpeech(this, this);
+
         // Initialize with the first animation and text
         updateAnimationAndText();
     }
@@ -99,40 +90,79 @@ public class Shape_Activity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        // Release MediaPlayer resources
         if (mediaPlayer != null) {
             mediaPlayer.release();
         }
+        // Release TextToSpeech resources
+        if (textToSpeech != null) {
+            textToSpeech.stop();
+            textToSpeech.shutdown();
+        }
     }
+
+    @Override
+    public void onInit(int status) {
+        if (status == TextToSpeech.SUCCESS) {
+            int result = textToSpeech.setLanguage(Locale.ENGLISH);
+            if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                Toast.makeText(this, "Language not supported", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(this, "TextToSpeech initialization failed", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
 
     private void updateAnimationAndText() {
-        animationview_shape.setAnimation(textureArrayWin[i]);
-        animationview_shape.playAnimation();
-       textview_shape.setText(textArray[i]);
+        int[] animationFiles = {
+                R.raw.circle_animation,
+                R.raw.triangle_animation,
+                R.raw.square_animation,
+                R.raw.star_animation,
+                R.raw.plus_animation,
+                R.raw.minus_animation,
+                R.raw.multiple_animation,
+                R.raw.divide_animation,
+                R.raw.heart_animation,
+                R.raw.left_arrow,
+                R.raw.right_arrow
+        };
+
+        // Make sure 'i' is within the bounds of the animationFiles array
+        if (i >= 0 && i < animationFiles.length) {
+            animationview_shape.setAnimation(animationFiles[i]);
+            animationview_shape.playAnimation();
+        } else {
+            // Handle index out of bounds error
+            Toast.makeText(this, "Animation index out of bounds", Toast.LENGTH_SHORT).show();
+        }
+
+        textview_shape.setText(textArray[i]);
         updateButtonVisibility();
-        updateMediaPlayer();
+
+        // Speak the text immediately
+        speakText(textArray[i]);
+
     }
 
 
-
+    private void speakText(String text) {
+        if (textToSpeech != null && !text.isEmpty()) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
+            } else {
+                textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+            }
+        }
+    }
 
     private void updateButtonVisibility() {
         left_arrow_shape.setVisibility(i > MIN_INDEX ? View.VISIBLE : View.GONE);
         right_arrow_shape.setVisibility(i < MAX_INDEX ? View.VISIBLE : View.GONE);
     }
 
-    private void updateMediaPlayer() {
-        if (mediaPlayer != null) {
-            mediaPlayer.release();
-        }
-        mediaPlayer = MediaPlayer.create(this, tracks[i]);
-        mediaPlayer.start();
-    }
-
-
-
-
-    // Other methods like transparentStatusbarAndNavigation and autoHiddenNavigationBar can be defined here.
-    // //Navigation bar hide decorView start
     private void transparentStatusbarAndNavigation(){
 
         if (Build.VERSION.SDK_INT>=19 && Build.VERSION.SDK_INT<21.){
@@ -162,6 +192,7 @@ public class Shape_Activity extends AppCompatActivity {
         }
 
     }
+
     private void setWindowFlag(int i,boolean b){
 
         Window win = getWindow();
@@ -175,6 +206,7 @@ public class Shape_Activity extends AppCompatActivity {
         win.setAttributes(winparams);
 
     }
+
     private void autoHiddenNavigationBar(){
 
         decorView = getWindow().getDecorView();
@@ -188,11 +220,12 @@ public class Shape_Activity extends AppCompatActivity {
 
                 }
 
-
             }
         });
 
     }
+
+
 
     private int hideSystemBars(){
         return  View.SYSTEM_UI_FLAG_LAYOUT_STABLE
@@ -200,6 +233,7 @@ public class Shape_Activity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION;
     }
+
     @Override
     public void onWindowFocusChanged(boolean hasFocus){
         super.onWindowFocusChanged(hasFocus);
@@ -208,8 +242,6 @@ public class Shape_Activity extends AppCompatActivity {
             decorView.setSystemUiVisibility(hideSystemBars());
         }
     }
-
-    // //Navigation bar hide decorView end
-
+    // Other methods for hiding status bar and navigation bar can be defined here.
 
 }
