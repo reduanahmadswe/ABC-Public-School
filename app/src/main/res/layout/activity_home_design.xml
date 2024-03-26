@@ -34,19 +34,19 @@
 
                 <LinearLayout
                     android:id="@+id/Alphabets"
-                    android:layout_width="120dp"
+                    android:layout_width="121dp"
                     android:layout_height="250dp"
+                    android:layout_marginStart="20dp"
                     android:layout_marginLeft="20dp"
                     android:background="@drawable/item_shape"
                     android:orientation="vertical"
-                    android:layout_marginStart="20dp"
                     android:weightSum="20">
 
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="125dp"
-                        android:src="@drawable/alphabets"
                         android:layout_gravity="center"
+                        android:src="@drawable/alphabets"
 
                         />
 
@@ -55,14 +55,10 @@
                         android:id="@+id/abckids"
                         android:layout_width="fill_parent"
                         android:layout_height="125dp"
-                        app:lottie_rawRes="@raw/abckids"
+                        android:layout_centerVertical="true"
                         app:lottie_autoPlay="true"
                         app:lottie_loop="true"
-                        android:layout_centerVertical="true"
-                        />
-
-
-
+                        app:lottie_rawRes="@raw/abckids" />
 
 
                 </LinearLayout>
@@ -100,35 +96,35 @@
                      </LinearLayout>
 
 
-                <LinearLayout
-                    android:id="@+id/math"
-                    android:layout_width="120dp"
-                    android:layout_height="250dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/item_shape"
-                    android:layout_marginStart="20dp"
-                    android:orientation="vertical">
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/math"-->
+<!--                    android:layout_width="120dp"-->
+<!--                    android:layout_height="250dp"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:background="@drawable/item_shape"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:orientation="vertical">-->
 
 
-                    <ImageView
-                        android:layout_width="125dp"
-                        android:layout_height="125dp"
-                        android:src="@drawable/bird_home"
-                        android:layout_gravity="center"
-                        />
+<!--                    <ImageView-->
+<!--                        android:layout_width="125dp"-->
+<!--                        android:layout_height="125dp"-->
+<!--                        android:src="@drawable/bird_home"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        />-->
 
 
-                    <com.airbnb.lottie.LottieAnimationView
-                        android:id="@+id/math_animation"
-                        android:layout_width="fill_parent"
-                        android:layout_height="125dp"
-                        app:lottie_rawRes="@raw/birds_home_page_animation"
-                        app:lottie_autoPlay="true"
-                        app:lottie_loop="true"
-                        android:layout_centerVertical="true"
-                        />
+<!--                    <com.airbnb.lottie.LottieAnimationView-->
+<!--                        android:id="@+id/math_animation"-->
+<!--                        android:layout_width="fill_parent"-->
+<!--                        android:layout_height="125dp"-->
+<!--                        app:lottie_rawRes="@raw/birds_home_page_animation"-->
+<!--                        app:lottie_autoPlay="true"-->
+<!--                        app:lottie_loop="true"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        />-->
 
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
 
                 <LinearLayout
@@ -263,54 +259,54 @@
 
 
 
-                <LinearLayout
-                    android:id="@+id/clour"
-                    android:layout_width="120dp"
-                    android:layout_height="250dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="@drawable/item_shape"
-                    android:layout_marginStart="20dp"
-                    android:orientation="vertical"
-                    android:layout_marginRight="20dp">
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/clour"-->
+<!--                    android:layout_width="120dp"-->
+<!--                    android:layout_height="250dp"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:layout_marginEnd="20dp"-->
+<!--                    android:background="@drawable/item_shape"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:layout_marginRight="20dp">-->
 
+
+<!--&lt;!&ndash;                    <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_width="125dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_height="125dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:src="@drawable/animal"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                        />&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;                    <com.airbnb.lottie.LottieAnimationView&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_width="fill_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_height="125dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                        app:lottie_rawRes="@raw/lion"&ndash;&gt;-->
+<!--&lt;!&ndash;                        app:lottie_autoPlay="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                        app:lottie_loop="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:layout_centerVertical="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                        />&ndash;&gt;-->
+
+
+
+<!--                    <TextView-->
+<!--                        android:layout_width="125dp"-->
+<!--                        android:layout_height="125dp"-->
+<!--                        android:background="@drawable/coler_green"-->
+<!--                        />-->
 
 <!--                    <ImageView-->
-<!--                        android:layout_width="125dp"-->
+<!--                        android:layout_width="fill_parent"-->
 <!--                        android:layout_height="125dp"-->
 <!--                        android:src="@drawable/animal"-->
 <!--                        android:layout_gravity="center"-->
 <!--                        />-->
 
 
-<!--                    <com.airbnb.lottie.LottieAnimationView-->
-<!--                        android:layout_width="fill_parent"-->
-<!--                        android:layout_height="125dp"-->
-<!--                        app:lottie_rawRes="@raw/lion"-->
-<!--                        app:lottie_autoPlay="true"-->
-<!--                        app:lottie_loop="true"-->
-<!--                        android:layout_centerVertical="true"-->
-<!--                        />-->
 
 
-
-                    <TextView
-                        android:layout_width="125dp"
-                        android:layout_height="125dp"
-                        android:background="@drawable/coler_green"
-                        />
-
-                    <ImageView
-                        android:layout_width="fill_parent"
-                        android:layout_height="125dp"
-                        android:src="@drawable/animal"
-                        android:layout_gravity="center"
-                        />
-
-
-
-
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
 
 
