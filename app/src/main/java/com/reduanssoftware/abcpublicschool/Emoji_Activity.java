@@ -22,10 +22,6 @@ public class Emoji_Activity extends AppCompatActivity {
         transparentStatusbarAndNavigation();
         autoHiddenNavigationBar();
 
-
-
-
-
     }
     private void transparentStatusbarAndNavigation(){
 

@@ -18,7 +18,6 @@ import com.airbnb.lottie.LottieAnimationView;
 
 public class Display_Activity extends AppCompatActivity {
 
-    //Navigation bar hide decorView
     private View decorView;
     LinearLayout number_animation_al;
     TextView a_alphabet,b_alphabet,c_alphabet,d_alphabet,e_alphabet,f_alphabet,g_alphabet,h_alphabet,i_alphabet,j_alphabet,
@@ -26,7 +25,6 @@ public class Display_Activity extends AppCompatActivity {
             u_alphabet,v_alphabet,w_alphabet,x_alphabet,y_alphabet,z_alphabet;
 
     LottieAnimationView back_arrow,circle;
-
 
 
     @SuppressLint("MissingInflatedId")

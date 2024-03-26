@@ -16,7 +16,6 @@ import com.airbnb.lottie.LottieAnimationView;
 
 public class Clour_Activity extends AppCompatActivity {
 
-
     private View decorView;
 
     private TextView textview_clour;

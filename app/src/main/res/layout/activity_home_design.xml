@@ -119,10 +119,10 @@
 
 
                     <com.airbnb.lottie.LottieAnimationView
-                        android:id="@+id/math_animation"
+                        android:id="@+id/flower_animation"
                         android:layout_width="fill_parent"
                         android:layout_height="125dp"
-                        app:lottie_rawRes="@raw/birds_home_page_animation"
+                        app:lottie_rawRes="@raw/home_flower"
                         app:lottie_autoPlay="true"
                         app:lottie_loop="true"
                         android:layout_centerVertical="true"

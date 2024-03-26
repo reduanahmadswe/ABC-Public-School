@@ -33,6 +33,7 @@ public class Number_Activity extends AppCompatActivity {
     private TextView number_28_50,number_1_27;
     LottieAnimationView back_arrow_number,back_arrow_number2;
 
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

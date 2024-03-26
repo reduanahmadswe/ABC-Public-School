@@ -137,8 +137,6 @@ public class Animal_Activity extends AppCompatActivity {
 
 
 
-
-    // Other methods like transparentStatusbarAndNavigation and autoHiddenNavigationBar can be defined here.
     // //Navigation bar hide decorView start
     private void transparentStatusbarAndNavigation(){
 
