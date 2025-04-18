@@ -59,10 +59,8 @@ public class Home_Design_Activity extends AppCompatActivity {
 
 
 
-
-
-
         final String appakageName = getPackageName();
+
 
 
 
